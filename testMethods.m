@@ -26,7 +26,7 @@ fileID = fopen(filename);
 bytes = fread(fileID,Inf,bitFormat);
 fclose(fileID);
 
-digram = generateDigram( bytes );
+digram = generateNgram( 2, bytes );
 
 visualizeDigram( digram );
 
@@ -53,26 +53,26 @@ fileID = fopen(filename);
 bytes = fread(fileID,Inf,bitFormat);
 fclose(fileID);
 
-trigram = generateTrigram( bytes, bitDepth );
+trigram = generateNgram( 3, bytes, bitDepth );
 
 visualizeTrigram(trigram);
 
 %% Hilbert/Entropy
-
-filename = 'files/vi.exe';
-
-bitDepth = 8;
-bitFormat = ['uint' num2str(bitDepth)];
-
-fileID = fopen(filename);
-[~,~,ext] = fileparts(filename);
-
-bytes = fread(fileID,Inf,bitFormat);
-fclose(fileID);
-
-% Format the byte stream into hilbert format
-[ Hbytes ] = hilbertTransform( bytes );
-
-visualizeBytes( Hbytes );
-filtered = entropyFilt( Hbytes );
-imagesc(filtered);
+% 
+% filename = 'files/vi.exe';
+% 
+% bitDepth = 8;
+% bitFormat = ['uint' num2str(bitDepth)];
+% 
+% fileID = fopen(filename);
+% [~,~,ext] = fileparts(filename);
+% 
+% bytes = fread(fileID,Inf,bitFormat);
+% fclose(fileID);
+% 
+% % Format the byte stream into hilbert format
+% [ Hbytes ] = hilbertTransform( bytes );
+% 
+% visualizeBytes( Hbytes );
+% filtered = entropyFilt( Hbytes );
+% imagesc(filtered);
