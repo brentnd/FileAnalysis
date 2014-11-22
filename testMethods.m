@@ -2,6 +2,11 @@ clf; clc;
 clear all; close all;
 format long g;
 
+addpath 'filter'
+addpath 'helper'
+addpath 'visualize'
+addpath 'transform'
+
 %% Digram
 figure;
 
