@@ -1,9 +1,12 @@
-function visualizeNgram( gram )
+function visualizeNgram( gram, color )
 %GENERATENGRAM Generate bigram from byte stream
 
 N = ndims(gram);
 if(isvector(gram))
     N = 1;
+end
+if(nargin == 1)
+    color = [0 0 0.8];
 end
 
 maxG = ceil(log(sum(gram(:))));
@@ -11,7 +14,8 @@ gram = log(gram);
 
 switch N
     case 1
-        bar(gram);
+        h = bar(gram,'EdgeColor',color,'FaceColor',color);
+        uistack(h,'bottom')
         axis([1 length(gram) 0 maxG]);
     case 2
         image(gram.*(64/maxG));

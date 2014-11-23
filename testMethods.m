@@ -73,21 +73,26 @@ figure;
 visualizeNgram(trigram);
 
 %% Hilbert/Entropy
-% 
-% filename = 'files/vi.exe';
-% 
-% bitDepth = 8;
-% bitFormat = ['uint' num2str(bitDepth)];
-% 
-% fileID = fopen(filename);
-% [~,~,ext] = fileparts(filename);
-% 
-% bytes = fread(fileID,Inf,bitFormat);
-% fclose(fileID);
-% 
-% % Format the byte stream into hilbert format
-% [ Hbytes ] = hilbertTransform( bytes );
-% 
-% visualizeBytes( Hbytes );
-% filtered = entropyFilt( Hbytes );
-% imagesc(filtered);
+
+filename = 'files/vi.exe';
+
+bitDepth = 8;
+bitFormat = ['uint' num2str(bitDepth)];
+
+fileID = fopen(filename);
+[~,~,ext] = fileparts(filename);
+
+bytes = fread(fileID,Inf,bitFormat);
+fclose(fileID);
+
+% Format the byte stream into hilbert format
+[ Hbytes ] = hilbertTransform( bytes );
+
+visualizeBytes( Hbytes );
+
+filtered = entropyFilt( Hbytes );
+imagesc(filtered);
+
+%% Scratch pad
+
+visualizeUnigram(bytes);
