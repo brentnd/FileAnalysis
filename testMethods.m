@@ -27,7 +27,7 @@ visualizeNgram( unigram );
 %% Bigram
 figure;
 
-filename = 'files/image.ppm';
+filename = 'files/text.txt';
 
 bitDepth = 8;
 offset = 1;
@@ -90,8 +90,8 @@ fclose(fileID);
 
 visualizeBytes( Hbytes );
 
-filtered = entropyFilt( Hbytes );
-imagesc(filtered);
+%filtered = entropyFilt( Hbytes );
+%imagesc(filtered);
 
 %% Scratch pad
 

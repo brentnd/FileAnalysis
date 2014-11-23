@@ -22,6 +22,7 @@ colorbar;
 hcb=colorbar;
 set(hcb,'YTick',[1, 80, 180, 255])
 set(hcb,'YTickLabel',{'Null','Printable Chars.','Other','255'});
+title('Byte class visualization','FontSize',14);
 
 end
 
