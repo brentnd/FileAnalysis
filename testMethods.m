@@ -7,7 +7,7 @@ addpath 'helper'
 addpath 'visualize'
 addpath 'transform'
 
-%% Digram
+%% Bigram
 figure;
 
 files = getAllFiles('files');
@@ -26,19 +26,19 @@ fileID = fopen(filename);
 bytes = fread(fileID,Inf,bitFormat);
 fclose(fileID);
 
-digram = generateNgram( 2, bytes );
+bigram = generateNgram( 2, bytes );
 
-visualizeDigram( digram );
+visualizeNgram( bigram );
 
 
 %% Digram compression
 
 figure;
 subplot(1,2,1);
-visualizeDigram( digram );
+visualizeNgram( bigram );
 subplot(1,2,2);
-comp = compressDigram(digram,2);
-visualizeDigram( comp );
+comp = compressDigram( bigram,2 );
+visualizeNgram( bomp );
 
 %% Trigram
 
@@ -55,7 +55,8 @@ fclose(fileID);
 
 trigram = generateNgram( 3, bytes, bitDepth );
 
-visualizeTrigram(trigram);
+figure;
+visualizeNgram(trigram);
 
 %% Hilbert/Entropy
 % 
