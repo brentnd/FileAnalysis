@@ -9,3 +9,7 @@ Methods include:
 +   Hilbert space-filling curve representation
 +   Byte class visualization
 +   File entropy visualization
+
+Sample 8-bit Bigrams:
+![Image Bigram](/captures/bigram_image_ppm.png?raw=true "Uncompressed Image file")
+![Text Bigram](/captures/bigram_text_txt.png?raw=true "ASCII text file")
