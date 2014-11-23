@@ -17,7 +17,7 @@ maxVal = 2^bitDepth;
 
 gramSize = num2cell(maxVal*ones(1,N));
 
-gram = ones(gramSize{:});
+gram = ones(gramSize{:},1);
 bytes = bytes + 1;
 
 % Switch pulled outside of loop to improve efficiency

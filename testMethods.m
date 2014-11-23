@@ -7,13 +7,27 @@ addpath 'helper'
 addpath 'visualize'
 addpath 'transform'
 
+%% Unigram
+figure;
+
+filename = 'files/image.ppm';
+
+bitDepth = 8;
+
+bitFormat = ['uint' num2str(bitDepth)];
+
+fileID = fopen(filename);
+bytes = fread(fileID,Inf,bitFormat);
+fclose(fileID);
+
+unigram = generateNgram( 1, bytes );
+
+visualizeNgram( unigram );
+
 %% Bigram
 figure;
 
-files = getAllFiles('files');
-i = 1;
-filename = files{i};
-filename = 'files/mov.mov';
+filename = 'files/image.ppm';
 
 bitDepth = 8;
 offset = 1;
