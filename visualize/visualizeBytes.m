@@ -12,8 +12,15 @@ cmap(1,:) = [1 1 1];
 cmap(2,:) = [0 0 0];
 % White for 255
 cmap(end,:) = [0.8 0.8 0.8];
-R = linspace(0.7,1.0,96);
-G = linspace(0.7,1.0,96);
+
+% Colors for ASCII control 2-31
+R = linspace(0.1,0.7,29);
+G = linspace(0.5,1.0,29);
+B = linspace(0.0,0.0,29);
+cmap(3:31,:) = [R' G' B'];
+% Colors for ASCII printable characters
+R = linspace(0.9,1.0,96);
+G = linspace(0.5,1.0,96);
 B = linspace(0.0,0.0,96);
 cmap(32:127,:) = [R' G' B'];
 colormap(cmap);
