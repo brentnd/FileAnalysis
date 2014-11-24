@@ -19,8 +19,9 @@ end
 x = round((x./max(x)+1)/2*(2^sz-1)) + 1;
 y = round((y./max(y)+1)/2*(2^sz-1)) + 1;
 
+dim = sqrt(length(x));
+Z = zeros(dim,dim);
 for i = 1:length(A)
-    Z(x(i),y(i)) = A(i);
+    Z(x(i),y(i)) = A(i)+2;
 end
-
 end

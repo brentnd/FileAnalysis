@@ -74,7 +74,7 @@ visualizeNgram(trigram);
 
 %% Hilbert/Entropy
 
-filename = 'files/vi.exe';
+filename = 'files/explorer.exe';
 
 bitDepth = 8;
 bitFormat = ['uint' num2str(bitDepth)];
